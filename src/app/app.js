@@ -10,8 +10,10 @@ export default class App extends Component {
           <div className="left-screen">
             <div className="top-border">
             </div>
-            <div className="poke-display">
-              <h1>Hello world!</h1>
+            <div className="poke-display-container">
+              <div className="poke-display">
+                <h1>Hello world!</h1>
+              </div>
             </div>
           </div>
           <div className="right-screen">
