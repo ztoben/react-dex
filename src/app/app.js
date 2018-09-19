@@ -9,6 +9,11 @@ export default class App extends Component {
         <div className="pokedex-container">
           <div className="left-screen">
             <div className="top-border">
+
+            </div>
+            <div className="hinge">
+              <div className="top" />
+              <div className="bottom" />
             </div>
             <div className="poke-display-container">
               <div className="poke-display">

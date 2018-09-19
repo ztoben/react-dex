@@ -1,6 +1,10 @@
-$primary-red: #C32C44;
+$primary-red: #EB3467;
 $primary-grey: #E2E4E3;
-$outside-border: 4px solid black;
+$outside-border-width: 4px;
+$inside-border-width: 2px;
+$outside-border: $outside-border-width solid black;
+$inside-border: $inside-border-width solid black;
+$top-height: calc(20% - 10px);
 
 .page-header {
   font-size: 50px;
@@ -23,8 +27,35 @@ $outside-border: 4px solid black;
     border-top-right-radius: 10px;
 
     .top-border {
-      height: calc(20% - 10px);
+      height: $top-height;
       border-bottom: $outside-border;
+    }
+
+    .hinge {
+      height: calc(100% - #{$top-height} - #{$outside-border-width});
+      width: 30px;
+      box-shadow: inset 10px 0 9px -7px rgba(0, 0, 0, 0.4),
+        inset -10px 0 9px -7px rgba(0, 0, 0, 0.4);
+      border-left: $outside-border;
+      float: right;
+
+      .top {
+        width: 100%;
+        height: 50px;
+        border-top: $outside-border;
+        border-bottom: $outside-border;
+        position: relative;
+        top: 10px;
+      }
+
+      .bottom {
+        width: 100%;
+        height: 50px;
+        border-top: $outside-border;
+        border-bottom: $outside-border;
+        position: relative;
+        bottom: -275px;
+      }
     }
 
     .poke-display-container {
@@ -32,14 +63,16 @@ $outside-border: 4px solid black;
       height: 250px;
       margin: 20px 5%;
       background-color: $primary-grey;
-      border: 2px solid black;
+      border: $inside-border;
       border-radius: 2px;
 
       .poke-display {
-        background-color: black;
+        background-color: white;
         height: 210px;
         width: 90%;
         margin: 15px;
+        border: $inside-border;
+        box-shadow: 3px 3px 5px 6px #ccc;
       }
     }
   }
