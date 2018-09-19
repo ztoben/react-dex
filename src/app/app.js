@@ -1,8 +1,36 @@
 import React, {Component, Fragment} from 'react';
 import '../style/app.scss';
+import pokemon from '../../public/pokemon.json';
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedIndex: 0,
+      selectedPokemon: pokemon[0]
+    };
+  }
+
+  buildList = () => pokemon.map((poke, idx) => {
+    return (
+      <li
+        className="poke-list-item"
+        key={poke.id}
+        onClick={
+          () => this.setState({
+            selectedIndex: idx,
+            selectedPokemon: pokemon[idx]
+          })
+        }
+      >
+        {poke.name}
+      </li>
+    )
+  });
+
   render() {
+    console.log(this.state.selectedPokemon);
     return (
       <Fragment>
         <p className="page-header">react-dex</p>
@@ -17,11 +45,19 @@ export default class App extends Component {
             </div>
             <div className="poke-display-container">
               <div className="poke-display">
-                <h1>Hello world!</h1>
+                <h4>{this.state.selectedPokemon.name}</h4>
               </div>
             </div>
           </div>
           <div className="right-screen">
+            <div className="poke-list-container">
+              <input className="poke-search" placeholder="Search for a Pokémon..."/>
+              <div className="poke-list">
+                <ul>
+                  {this.buildList()}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </Fragment>

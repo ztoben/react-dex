@@ -17,6 +17,7 @@ $top-height: calc(20% - 10px);
   width: 750px;
   height: 500px;
   display: inline-flex;
+  text-transform: uppercase;
 
   .left-screen {
     background-color: $primary-red;
@@ -69,11 +70,16 @@ $top-height: calc(20% - 10px);
 
       .poke-display {
         background-color: white;
+        color: black;
         height: 210px;
         width: 90%;
         margin: 15px;
         border: $inside-border;
         box-shadow: 3px 3px 5px 6px #ccc;
+
+        h4 {
+          text-align: center;
+        }
       }
     }
   }
@@ -87,5 +93,52 @@ $top-height: calc(20% - 10px);
     border-top-right-radius: 10px;
     border-left: none;
     align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .poke-list-container {
+      width: 85%;
+      height: 85%;
+      background-color: $primary-grey;
+      border: $inside-border;
+      border-radius: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+
+      .poke-search {
+        flex-shrink: 1;
+        height: 40px;
+        font-size: 18px;
+        padding: 2px 5px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        margin: 5px;
+        background: $primary-grey;
+        width: calc(100% - 24px);
+      }
+
+      .poke-list {
+        width: 100%;
+        height: calc(100% - 58px);
+        background-color: darkgray;
+        overflow: scroll;
+        padding: 0;
+
+        ul {
+          padding: 0;
+          margin: 0;
+        }
+
+        .poke-list-item {
+          list-style: none;
+          height: 40px;
+          line-height: 40px;
+          border-bottom: 1px dotted white;
+          padding-left: 20px;
+        }
+      }
+    }
   }
 }
