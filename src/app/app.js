@@ -30,7 +30,6 @@ export default class App extends Component {
   });
 
   render() {
-    console.log(this.state.selectedPokemon);
     return (
       <Fragment>
         <p className="page-header">react-dex</p>
@@ -46,6 +45,7 @@ export default class App extends Component {
             <div className="poke-display-container">
               <div className="poke-display">
                 <h4>{this.state.selectedPokemon.name}</h4>
+                <img width={100} src={require(`../../public/sprites/${this.state.selectedPokemon.id}.png`)} />
               </div>
             </div>
           </div>

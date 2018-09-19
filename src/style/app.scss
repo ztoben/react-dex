@@ -76,9 +76,10 @@ $top-height: calc(20% - 10px);
         margin: 15px;
         border: $inside-border;
         box-shadow: 3px 3px 5px 6px #ccc;
+        text-align: center;
 
         h4 {
-          text-align: center;
+          margin: 5px;
         }
       }
     }
@@ -121,10 +122,13 @@ $top-height: calc(20% - 10px);
 
       .poke-list {
         width: 100%;
-        height: calc(100% - 58px);
+        height: calc(100% - 60px);
         background-color: darkgray;
         overflow: scroll;
         padding: 0;
+        border-top: $inside-border;
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 2px;
 
         ul {
           padding: 0;
