@@ -1,5 +1,6 @@
 const webpack = require('webpack');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = () => {
   return {
@@ -54,8 +55,9 @@ module.exports = () => {
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebPackPlugin({
         template: "./src/index.html",
-        filename: "./index.html"
-      })
+        filename: "index.html"
+      }),
+      new FaviconsWebpackPlugin('./assets/favicon.png')
     ],
     devServer: {
       compress: true,
