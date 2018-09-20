@@ -16,6 +16,7 @@ script:
 deploy:
   project: ./dist/
   provider: surge
+  domain: ztoben-react-dex.surge.sh
   skip-cleanup: true
   keep-history: true
   on:
