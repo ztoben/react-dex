@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
-import '../style/app.scss';
 import pokemon from '../../assets/pokemon.json';
+import '../style/app.scss';
 
 export default class App extends Component {
   constructor(props) {
@@ -35,17 +35,15 @@ export default class App extends Component {
         <p className="page-header">react-dex</p>
         <div className="pokedex-container">
           <div className="left-screen">
-            <div className="top-border">
-
-            </div>
+            <div className="top-border"/>
             <div className="hinge">
-              <div className="top" />
-              <div className="bottom" />
+              <div className="top"/>
+              <div className="bottom"/>
             </div>
             <div className="poke-display-container">
               <div className="poke-display">
                 <h4>{this.state.selectedPokemon.name}</h4>
-                <img width={100} src={require(`../../assets/sprites/${this.state.selectedPokemon.id}.png`)} />
+                <img width={100} src={require(`../../assets/sprites/${this.state.selectedPokemon.id}.png`)}/>
               </div>
             </div>
           </div>
