@@ -17,9 +17,9 @@ module.exports = () => {
         {
           test: /\.(scss|css)$/,
           use: [
-            "style-loader",
-            "css-loader",
-            "sass-loader"
+            'style-loader',
+            'css-loader',
+            'sass-loader'
           ]
         },
         {
@@ -32,10 +32,13 @@ module.exports = () => {
           }]
         },
         {
-          test: /\.(png|svg|jpg|gif)$/,
-          use: [
-            'file-loader'
-          ]
+          test: /\.(jpg|png)$/,
+          use: {
+            loader: 'url-loader',
+            options: {
+              limit: 25000,
+            },
+          },
         }
       ]
     },
