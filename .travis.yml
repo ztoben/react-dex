@@ -14,12 +14,9 @@ script:
 - npm run build
 
 deploy:
-  email: "zach.toben@gmail.com"
-  name: "Zach Toben"
-  local-dir: dist
-  provider: pages
+  project: ./dist/
+  provider: surge
   skip-cleanup: true
-  github-token: $GH_TOKEN
   keep-history: true
   on:
     branch: master
