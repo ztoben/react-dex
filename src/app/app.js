@@ -7,15 +7,33 @@ export default class App extends Component {
     super(props);
 
     this.state = {
+      search: '',
       selectedIndex: 0,
       selectedPokemon: pokemon[0]
     };
   }
 
-  buildList = () => pokemon.map((poke, idx) => {
+  handleChange = e => {
+    this.setState({
+      search: e.target.value
+    })
+  };
+
+  handleEnter = (e, idx) => {
+    if (e.keyCode === 13) {
+      this.setState({
+        selectedIndex: idx,
+        selectedPokemon: pokemon[idx]
+      })
+    }
+  };
+
+  buildList = (pokemonArr) => pokemonArr
+    .filter(poke => this.state.search === '' || poke.name.includes(this.state.search))
+    .map((poke, idx) => {
     return (
       <li
-        className="poke-list-item"
+        className={`poke-list-item${idx === this.state.selectedIndex ? ' selected' : ''}`}
         key={poke.id}
         onClick={
           () => this.setState({
@@ -23,6 +41,8 @@ export default class App extends Component {
             selectedPokemon: pokemon[idx]
           })
         }
+        tabIndex={0}
+        onKeyDown={e => this.handleEnter(e, idx)}
       >
         {poke.name}
       </li>
@@ -49,10 +69,15 @@ export default class App extends Component {
           </div>
           <div className="right-screen">
             <div className="poke-list-container">
-              <input className="poke-search" placeholder="Search for a Pokémon..."/>
+              <input
+                value={this.state.search}
+                onChange={this.handleChange}
+                className="poke-search"
+                placeholder="Search for a Pokémon..."
+              />
               <div className="poke-list">
                 <ul>
-                  {this.buildList()}
+                  {this.buildList(pokemon)}
                 </ul>
               </div>
             </div>
