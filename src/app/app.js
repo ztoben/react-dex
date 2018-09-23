@@ -53,7 +53,14 @@ export default class App extends Component {
         <p className="page-header">react-dex</p>
         <div className="pokedex-container">
           <div className="left-screen">
-            <div className="top-border"/>
+            <div className="top-border">
+              <div className="indicator-light"/>
+              <div className="decorator-lights-container">
+                <div className="light"/>
+                <div className="light"/>
+                <div className="light"/>
+              </div>
+            </div>
             <div className="hinge">
               <div className="top"/>
               <div className="bottom"/>

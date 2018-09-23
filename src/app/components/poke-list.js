@@ -63,5 +63,5 @@ PokeList.propTypes = {
   selectedPokemon: object,
   onListItemClick: func,
   onEnter: func,
-  searchRef: func
+  searchRef: object
 };
