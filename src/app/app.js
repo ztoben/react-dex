@@ -10,7 +10,6 @@ export default class App extends Component {
 
     this.state = {
       search: '',
-      selectedIndex: 0,
       selectedPokemon: pokemon[0]
     };
   }
@@ -21,19 +20,21 @@ export default class App extends Component {
     })
   };
 
-  handleEnter = (e, idx) => {
+  handleEnter = (e, id) => {
     if (e.keyCode === 13) {
       this.setState({
-        selectedIndex: idx,
-        selectedPokemon: pokemon[idx]
+        selectedPokemon: pokemon.find(poke => poke.id === id)
       })
     }
   };
 
-  handleListItemClick = idx => this.setState({
-    selectedIndex: idx,
-    selectedPokemon: pokemon[idx]
-  });
+  handleListItemClick = id => {
+    const selectedPokemon = pokemon.find(poke => poke.id === id);
+
+    return this.setState({
+      selectedPokemon
+    });
+  };
 
   render() {
     const {selectedPokemon} = this.state;
@@ -65,7 +66,7 @@ export default class App extends Component {
             <PokeList
               pokemon={pokemon}
               search={this.state.search}
-              selectedIndex={this.state.selectedIndex}
+              selectedPokemon={selectedPokemon}
               handleChange={this.handleChange}
               onListItemClick={this.handleListItemClick}
               onEnter={this.handleEnter}

@@ -1,14 +1,14 @@
 import React from 'react';
-import {array, string, func, number} from 'prop-types';
+import {array, string, func, object} from 'prop-types';
 
-const buildList = (pokemonArr, search, selectedIndex, onListItemClick, onEnter) => pokemonArr
+const buildList = (pokemonArr, search, selectedPokemon, onListItemClick, onEnter) => pokemonArr
   .filter(poke => search === '' || poke.name.includes(search))
   .map((poke, idx) => {
     return (
       <li
-        className={`poke-list-item${idx === selectedIndex ? ' selected' : ''}`}
-        onClick={() => onListItemClick(idx)}
-        onKeyDown={e => onEnter(e, idx)}
+        className={`poke-list-item${poke.name === selectedPokemon.name ? ' selected' : ''}`}
+        onClick={() => onListItemClick(poke.id)}
+        onKeyDown={e => onEnter(e, poke.id)}
         key={poke.id}
         tabIndex={0}
       >
@@ -17,7 +17,7 @@ const buildList = (pokemonArr, search, selectedIndex, onListItemClick, onEnter) 
     )
   });
 
-export default function PokeList({pokemon, search, handleChange, onListItemClick, selectedIndex, onEnter}) {
+export default function PokeList({pokemon, search, handleChange, onListItemClick, selectedPokemon, onEnter}) {
   return (
     <div className="poke-list-container">
       <input
@@ -28,7 +28,7 @@ export default function PokeList({pokemon, search, handleChange, onListItemClick
       />
       <div className="poke-list">
         <ul>
-          {buildList(pokemon, search, selectedIndex, onListItemClick, onEnter)}
+          {buildList(pokemon, search, selectedPokemon, onListItemClick, onEnter)}
         </ul>
       </div>
     </div>
@@ -41,7 +41,7 @@ PokeList.propTypes = {
   pokemon: array,
   search: string,
   handleChange: func,
-  selectedIndex: number,
+  selectedPokemon: object,
   onListItemClick: func,
   onEnter: func
 };
