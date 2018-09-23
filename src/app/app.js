@@ -10,7 +10,8 @@ export default class App extends Component {
 
     this.state = {
       search: '',
-      selectedPokemon: pokemon[0]
+      selectedPokemon: pokemon[0],
+      searchRef: React.createRef()
     };
   }
 
@@ -19,6 +20,14 @@ export default class App extends Component {
       search: e.target.value
     })
   };
+
+  handleClearSearch = () => {
+    this.state.searchRef.current.focus();
+    this.setState({
+      search: ''
+    });
+  };
+
 
   handleEnter = (e, id) => {
     if (e.keyCode === 13) {
@@ -70,6 +79,8 @@ export default class App extends Component {
               handleChange={this.handleChange}
               onListItemClick={this.handleListItemClick}
               onEnter={this.handleEnter}
+              clearSearch={this.handleClearSearch}
+              searchRef={this.state.searchRef}
             />
           </div>
         </div>

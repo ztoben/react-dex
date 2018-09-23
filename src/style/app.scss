@@ -126,6 +126,20 @@ $top-height: calc(20% - 10px);
         width: calc(100% - 24px);
       }
 
+      .clear-search {
+        cursor: pointer;
+        height: 20px;
+        line-height: 20px;
+        border-radius: 20px;
+        background-color: lightgrey;
+        border: 1px solid darkgray;
+        width: 20px;
+        color: darkgray;
+        text-align: center;
+        margin: 18px 0 0 260px;
+        position: absolute;
+      }
+
       .poke-list {
         width: 100%;
         height: calc(100% - 60px);
