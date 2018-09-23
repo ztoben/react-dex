@@ -1,0 +1,19 @@
+.type-badge-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 1;
+
+  .type-badge {
+    border: 2px solid black;
+    display: inline-block;
+    padding: 5px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin: 5px;
+    width: 100px;
+    font-size: 10px;
+    align-self: flex-end;
+  }
+}
+

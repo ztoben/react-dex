@@ -1,4 +1,6 @@
 import React, {Component, Fragment} from 'react';
+import PokeList from './components/poke-list';
+import TypeBadges from './components/type-badges';
 import pokemon from '../../assets/pokemon.json';
 import '../style/app.scss';
 
@@ -28,28 +30,14 @@ export default class App extends Component {
     }
   };
 
-  buildList = (pokemonArr) => pokemonArr
-    .filter(poke => this.state.search === '' || poke.name.includes(this.state.search))
-    .map((poke, idx) => {
-    return (
-      <li
-        className={`poke-list-item${idx === this.state.selectedIndex ? ' selected' : ''}`}
-        key={poke.id}
-        onClick={
-          () => this.setState({
-            selectedIndex: idx,
-            selectedPokemon: pokemon[idx]
-          })
-        }
-        tabIndex={0}
-        onKeyDown={e => this.handleEnter(e, idx)}
-      >
-        {poke.name}
-      </li>
-    )
+  handleListItemClick = idx => this.setState({
+    selectedIndex: idx,
+    selectedPokemon: pokemon[idx]
   });
 
   render() {
+    const {selectedPokemon} = this.state;
+
     return (
       <Fragment>
         <p className="page-header">react-dex</p>
@@ -62,25 +50,26 @@ export default class App extends Component {
             </div>
             <div className="poke-display-container">
               <div className="poke-display">
-                <h4>{this.state.selectedPokemon.name}</h4>
-                <img width={100} src={require(`../../assets/sprites/${this.state.selectedPokemon.id}.png`)}/>
+                <h4>{selectedPokemon.name}</h4>
+                <div className="poke-img-container">
+                  <img
+                    width={150}
+                    src={require(`../../assets/sprites/${selectedPokemon.id}.png`)}
+                  />
+                </div>
+                <TypeBadges types={selectedPokemon.type}/>
               </div>
             </div>
           </div>
           <div className="right-screen">
-            <div className="poke-list-container">
-              <input
-                value={this.state.search}
-                onChange={this.handleChange}
-                className="poke-search"
-                placeholder="Search for a Pokémon..."
-              />
-              <div className="poke-list">
-                <ul>
-                  {this.buildList(pokemon)}
-                </ul>
-              </div>
-            </div>
+            <PokeList
+              pokemon={pokemon}
+              search={this.state.search}
+              selectedIndex={this.state.selectedIndex}
+              handleChange={this.handleChange}
+              onListItemClick={this.handleListItemClick}
+              onEnter={this.handleEnter}
+            />
           </div>
         </div>
       </Fragment>

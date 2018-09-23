@@ -77,9 +77,15 @@ $top-height: calc(20% - 10px);
         border: $inside-border;
         box-shadow: 3px 3px 5px 6px #ccc;
         text-align: center;
+        display: flex;
+        flex-direction: column;
 
         h4 {
           margin: 5px;
+        }
+
+        .poke-img-container {
+          width: 100%;
         }
       }
     }
