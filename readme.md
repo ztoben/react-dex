@@ -7,9 +7,7 @@
     <b>A Pokédex written in react</b>
 </p>
 
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/ztoben/react-dex.svg)](https://greenkeeper.io/)
-
+[![Greenkeeper badge](https://badges.greenkeeper.io/ztoben/react-dex.svg)](https://greenkeeper.io/) [![Build Status](https://travis-ci.org/ztoben/react-dex.svg?branch=master)](https://travis-ci.org/ztoben/react-dex)
 
 View the live site here: [ztoben-react-dex.surge.sh](http://ztoben-react-dex.surge.sh)
 
