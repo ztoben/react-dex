@@ -11,6 +11,10 @@
 
 View the live site here: [ztoben-react-dex.surge.sh](http://ztoben-react-dex.surge.sh)
 
+<p align="center">
+    <img width="500" alt="react-dex" src="https://user-images.githubusercontent.com/4007345/45953990-5f230200-bfd1-11e8-8b1e-f5b2ecf57a9f.png">
+</p>
+
 Technologies used:
 * Javascript
 * React
