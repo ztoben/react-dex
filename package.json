@@ -20,7 +20,7 @@
     "@babel/plugin-proposal-class-properties": "7.1.0",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
-    "babel-loader": "8.0.2",
+    "babel-loader": "8.0.3",
     "css-loader": "1.0.0",
     "favicons-webpack-plugin": "0.0.9",
     "html-loader": "0.5.5",
