@@ -1,0 +1,56 @@
+@import '../variables';
+
+.d-pad-container {
+  float: right;
+  margin-right: 30px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    background-color: #313131;
+    cursor: pointer;
+  }
+
+  .top {
+    margin-left: calc(100% / 3);
+    margin-right: calc(100% / 3);
+    height: calc(100% / 3);
+    border: $outside-border;
+    border-bottom: none;
+  }
+
+  .bottom {
+    margin-left: calc(100% / 3);
+    margin-right: calc(100% / 3);
+    height: calc(100% / 3);
+    border: $outside-border;
+    border-top: none;
+  }
+
+  .middle-row-container {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% / 3);
+
+    .left {
+      width: calc((100% / 3) + 3px);
+      height: calc(100% - 8px);
+      border: $outside-border;
+      border-right: none;
+    }
+
+    .middle {
+      width: calc((100% / 3) - 6px);
+      height: 100%;
+    }
+
+    .right {
+      width: calc((100% / 3) + 3px);
+      height: calc(100% - 8px);
+      border: $outside-border;
+      border-left: none;
+    }
+  }
+}

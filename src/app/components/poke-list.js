@@ -1,5 +1,6 @@
 import React from 'react';
 import {array, string, func, object} from 'prop-types';
+import '../../style/components/poke-list.scss';
 
 const buildList = (pokemonArr, search, selectedPokemon, onListItemClick, onEnter) => pokemonArr
   .filter(poke => search === '' || poke.name.includes(search))
@@ -39,6 +40,11 @@ export default function PokeList({
       <span
         className="clear-search"
         onClick={clearSearch}
+        onKeyDown={e => {
+          if (e.keyCode === 13) {
+            clearSearch();
+          }
+        }}
         role="button"
         tabIndex={0}
       >

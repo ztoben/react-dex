@@ -1,0 +1,33 @@
+@import '../variables';
+
+.poke-display-container {
+  width: 80%;
+  height: 250px;
+  margin: 20px 5% 15px;
+  background-color: $primary-grey;
+  border: $inside-border;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .poke-display {
+    background-color: white;
+    color: black;
+    height: 210px;
+    width: 90%;
+    border: $inside-border;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      margin: 5px;
+    }
+
+    .poke-img-container {
+      width: 100%;
+    }
+  }
+}

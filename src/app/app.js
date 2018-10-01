@@ -1,7 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import PokeList from './components/poke-list';
-import TypeBadges from './components/type-badges';
 import pokemon from '../../assets/pokemon.json';
+import PokeDisplay from "./components/poke-display";
+import IndicatorArea from "./components/indicator-area";
+import DPad from "./components/d-pad";
 import '../style/app.scss';
 
 export default class App extends Component {
@@ -15,7 +17,13 @@ export default class App extends Component {
     };
   }
 
-  handleChange = e => {
+  handleChangePokemon = idx => {
+    this.setState({
+      selectedPokemon: pokemon[idx]
+    });
+  };
+
+  handleSearch = e => {
     this.setState({
       search: e.target.value
     })
@@ -27,7 +35,6 @@ export default class App extends Component {
       search: ''
     });
   };
-
 
   handleEnter = (e, id) => {
     if (e.keyCode === 13) {
@@ -53,37 +60,23 @@ export default class App extends Component {
         <p className="page-header">react-dex</p>
         <div className="pokedex-container">
           <div className="left-screen">
-            <div className="top-border">
-              <div className="indicator-light"/>
-              <div className="decorator-lights-container">
-                <div className="light"/>
-                <div className="light"/>
-                <div className="light"/>
-              </div>
-            </div>
+            <IndicatorArea/>
             <div className="hinge">
               <div className="top"/>
               <div className="bottom"/>
             </div>
-            <div className="poke-display-container">
-              <div className="poke-display">
-                <h4>{selectedPokemon.name}</h4>
-                <div className="poke-img-container">
-                  <img
-                    width={150}
-                    src={require(`../../assets/sprites/${selectedPokemon.id}.png`)}
-                  />
-                </div>
-                <TypeBadges types={selectedPokemon.type}/>
-              </div>
-            </div>
+            <PokeDisplay selectedPokemon={selectedPokemon}/>
+            <DPad
+              selectedPokemon={selectedPokemon}
+              onChangePokemon={this.handleChangePokemon}
+            />
           </div>
           <div className="right-screen">
             <PokeList
               pokemon={pokemon}
               search={this.state.search}
               selectedPokemon={selectedPokemon}
-              handleChange={this.handleChange}
+              handleChange={this.handleSearch}
               onListItemClick={this.handleListItemClick}
               onEnter={this.handleEnter}
               clearSearch={this.handleClearSearch}

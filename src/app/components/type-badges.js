@@ -1,6 +1,6 @@
 import React from 'react';
 import {string} from 'prop-types';
-import '../../style/type-badge.scss';
+import '../../style/components/type-badge.scss';
 
 const typeMap = {
   normal: '#A8A77D',

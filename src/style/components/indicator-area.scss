@@ -1,0 +1,48 @@
+@import '../variables';
+
+.indicator-container {
+  height: $top-height;
+  border-bottom: $outside-border;
+  display: flex;
+  align-items: center;
+
+  .indicator-light {
+    height: 50px;
+    width: 50px;
+    background-color: lightblue;
+    border: 5px solid lightgray;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 15px;
+    box-shadow: inset -7px -7px 8px 10px rgb(0, 134, 255);
+  }
+
+  .decorator-lights-container {
+    margin: 0 20px 0 auto;
+    display: inline-block;
+
+    .light {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-left: 15px;
+      border: 1px solid black;
+
+      &:nth-child(1) {
+        background-color: rgb(255, 76, 65);
+        box-shadow: inset -3px -3px 4px 3px red;
+      }
+
+      &:nth-child(2) {
+        background-color: #fdff99;
+        box-shadow: inset -3px -3px 4px 3px rgb(255, 251, 107);
+      }
+
+      &:nth-child(3) {
+        background-color: greenyellow;
+        box-shadow: inset -3px -3px 4px 3px rgb(96, 255, 39);
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import '../variables';
+
+.poke-list-container {
+  width: 85%;
+  height: 85%;
+  background-color: $primary-grey;
+  border: $inside-border;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  .poke-search {
+    flex-shrink: 1;
+    height: 40px;
+    font-size: 18px;
+    padding: 2px 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    margin: 5px;
+    background: $primary-grey;
+    width: calc(100% - 24px);
+  }
+
+  .clear-search {
+    cursor: pointer;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 20px;
+    background-color: lightgrey;
+    border: 1px solid darkgray;
+    width: 20px;
+    color: darkgray;
+    text-align: center;
+    margin: 18px 0 0 260px;
+    position: absolute;
+    font-weight: bold;
+  }
+
+  .poke-list {
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: darkgray;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+    border-top: $inside-border;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    .poke-list-item {
+      list-style: none;
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px dotted white;
+      padding-left: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lightgray;
+      }
+
+      &.selected {
+        background-color: orange;
+      }
+    }
+  }
+}
