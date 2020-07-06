@@ -1,6 +1,6 @@
 import React from 'react';
 import {array, string, func, object} from 'prop-types';
-import '../../style/components/poke-list.scss';
+import '../style/components/poke-list.scss';
 
 const buildList = (pokemonArr, search, selectedPokemon, onListItemClick, onEnter) => pokemonArr
   .filter(poke => search === '' || poke.name.includes(search))

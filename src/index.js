@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/app';
+import Index from './app';
 import './style/index.scss';
 
 ReactDOM.render(
   <div className="background">
-    <App/>
+    <Index/>
   </div>,
   document.getElementById('app')
 );

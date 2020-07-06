@@ -1,12 +1,12 @@
 import React, {Component, Fragment} from 'react';
-import PokeList from './components/poke-list';
+import PokeList from './poke-list';
 import pokemon from '../../assets/pokemon.json';
-import PokeDisplay from "./components/poke-display";
-import IndicatorArea from "./components/indicator-area";
-import DPad from "./components/d-pad";
+import PokeDisplay from './poke-display';
+import IndicatorArea from './indicator-area';
+import DPad from './d-pad';
 import '../style/app.scss';
 
-export default class App extends Component {
+export default class Index extends Component {
   constructor(props) {
     super(props);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../style/components/indicator-area.scss';
+import '../style/components/indicator-area.scss';
 
 export default function IndicatorArea() {
   return (

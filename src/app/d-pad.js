@@ -1,7 +1,7 @@
 import React from 'react';
 import {shape, func, string} from 'prop-types';
-import pokemon from '../../../assets/pokemon.json';
-import '../../style/components/d-pad.scss';
+import pokemon from '../../assets/pokemon.json';
+import '../style/components/d-pad.scss';
 
 function normalizeIndex(index) {
   if (index < 0) {
