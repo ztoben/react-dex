@@ -4,8 +4,6 @@ import TypeBadges from "./type-badges";
 import '../style/components/poke-display.scss';
 
 export default function PokeDisplay({selectedPokemon}) {
-  console.log(`${selectedPokemon.id}.png`);
-
   return (
     <div className="poke-display-container">
       <div className="poke-display">
